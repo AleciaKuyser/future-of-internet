@@ -1,0 +1,75 @@
+/* block with fixed background to create parallax effect */
+.preview-block {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 75vw;
+    min-height: 60vh!important;
+    flex: 1;
+}
+
+/* offset left or right to align with the blocks */
+.preview-left { background-position: calc(0% - 12.5vw) calc(50% + 42pt);}
+.preview-right { background-position: calc(0% + 37.5vw) calc(50% + 42pt);}
+
+/* background images for preview blocks, with gradient overlay to darken them */
+.history { background-image: linear-gradient( #000000dd, #00000066, #000000dd), url('https://upload.wikimedia.org/wikipedia/commons/5/53/Basicode2.jpg'); }
+.state { background-image: linear-gradient( #000000dd, #00000066, #000000dd), url('https://upload.wikimedia.org/wikipedia/commons/8/87/New_Steam_Logo_with_name.jpg'); }
+.new { background-image: linear-gradient( #000000dd, #00000066, #000000dd), url('https://live.staticflickr.com/65535/48584567907_2b6e70ec16_b.jpg');}
+.future { background-image: linear-gradient( #000000dd, #00000066, #000000dd), url('https://upload.wikimedia.org/wikipedia/commons/d/dc/Cloud-Computing_services.png');}
+
+/* turns a link into a block, removes hyperlink text decoration */
+.block-link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    text-decoration: none;
+}
+
+/* formatting for preview block text, shadow to make it more readable over the image */
+.preview-heading {
+    text-shadow: 2px 2px #222222;
+    font-size: 28pt;
+    font-weight: bold;
+}
+.preview-body {
+    text-shadow: 2px 2px #222222!important;
+    font-size: larger;
+    font-weight: 300;
+    text-align:justify;
+}
+
+/* makes the heading stick to the top of the window */
+.sticky-heading {
+    position: sticky;
+    z-index: 1;
+    top: 0px;
+    width: 100vw
+}
+
+/* offsets and narrows the box so it appears centered and half-width */
+.half-width-text {
+    width: 75%;
+    padding-left: 25%;
+}
+
+/* shows the children horizontally on a large screen, vertically on small */
+.responsive-row {
+    display: flex!important;
+    flex-direction: row!important;
+    width: 100%;
+    text-align: center
+}
+@media (max-width:860px) {
+    .responsive-row { flex-direction: column!important}
+    .preview-block{ background-size: cover;}
+    .preview-left,.preview-right{ background-position: center}
+    .preview-block{ min-height: 0}
+    .sticky-heading{ position: initial}
+}
+
+/* display a list without bullets or indents */
+.plain-list{
+    list-style-type:none; 
+    padding-left:0
+}

@@ -1,0 +1,174 @@
+
+input {
+    display: none;
+}
+
+.toggle-button {
+    width: 50vw;
+    height: 400pt;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    flex: 1;
+    word-wrap: normal!important;
+    white-space: normal;
+}
+
+.row-container {
+    display: flex!important;
+    flex-direction: row!important;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+}
+
+.computer-toggle {
+    background-image: linear-gradient( #00000066, #00000066 ), url(https://upload.wikimedia.org/wikipedia/commons/3/36/Ibm_pc_5150-1024x951.jpg);
+}
+.console-toggle {
+    background-image: linear-gradient( #00000066, #00000066 ), url(https://upload.wikimedia.org/wikipedia/commons/c/c8/Satellaview_with_SuperFamicom.jpg);
+}
+
+.toggle-content {
+    width: 0vw;
+    visibility: hidden;
+    text-align: justify;
+}
+
+.toggle-content h3 {
+    line-height: 4pt;;
+}
+
+.right-content {
+    text-align-last: right;
+    -ms-text-align-last: right;
+    -moz-text-align-last: right;
+}
+
+.toggle-button, .toggle-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@keyframes toggle-shrink {
+    from {width: 50vw;}
+    to {width: 25vw;}
+}
+
+@keyframes toggle-hide {
+    from{width: 50vw; visibility:visible; opacity:1}
+    to{width:0vw!important; visibility: hidden!important; opacity: 0;}
+}
+
+@keyframes content-show {
+    from {width: 0vw; visibility: hidden; font-size: 0pt;}
+    to {width: 55vw; visibility: visible; font-size: medium;}
+}
+
+@keyframes toggle-grow {
+    from {width: 25vw;}
+    to {width: 50vw;}
+}
+
+@keyframes toggle-show {
+    from{width:0vw; visibility: hidden; opacity: 0;}
+    to{width: 50vw; visibility:visible; opacity: 1;}
+}
+
+@keyframes content-hide {
+    from {width: 55vw; visibility: visible; font-size: medium}
+    to {width: 0vw; visibility: hidden; font-size: 0pt;}
+}
+
+/* the not case needs to be above the checked case for precedence */
+
+.left-check:not(:checked) ~ .left-toggle {
+    animation-name: toggle-grow;
+    animation-duration: 200ms;
+    width: 50vw;
+}
+.left-check:not(:checked) ~ .left-content {
+    animation-name: content-hide;
+    animation-duration: 200ms;
+    width: 0vw;
+    visibility: hidden;
+    font-size:0pt;
+    padding: 0;
+}
+.left-check:not(:checked) ~ .right-toggle {
+    animation-name: toggle-show;
+    animation-duration: 200ms;
+    width: 50vw;
+    visibility:visible;
+    opacity:1;
+}
+.right-check:not(:checked) ~ .right-toggle {
+    animation-name: toggle-grow;
+    animation-duration: 200ms;
+    width: 50vw;
+}
+.right-check:not(:checked) ~ .right-content {
+    animation-name: content-hide;
+    animation-duration: 200ms;
+    width: 0vw;
+    visibility: hidden;
+    font-size:0pt;
+    padding: 0;
+}
+.right-check:not(:checked) ~ .left-toggle {
+    animation-name: toggle-show;
+    animation-duration: 200ms;
+    width: 50vw;
+    visibility:visible;
+    opacity:1;
+}
+
+/* shrink the computer toggle button when checked */
+.left-check:checked ~ .left-toggle {
+    animation-name: toggle-shrink;
+    animation-duration: 200ms;
+    width: 25vw;
+}
+
+/* show the computer text when checked */
+.left-check:checked ~ .left-content {
+    animation-name: content-show;
+    animation-duration: 200ms;
+    width: 55vw;
+    visibility: visible;
+    font-size:medium;
+    padding: 8pt;
+}
+
+/* hide the console button when computer is checked */
+.left-check:checked ~ .right-toggle {
+    animation-name: toggle-hide;
+    animation-duration: 200ms;
+    width: 0vw!important;
+    visibility:hidden;
+    opacity:0;
+}
+
+/* do the same for the other button */
+
+.right-check:checked ~ .right-toggle {
+    animation-name: toggle-shrink;
+    animation-duration: 200ms;
+    width: 25vw;
+}
+.right-check:checked ~ .right-content {
+    animation-name: content-show;
+    animation-duration: 200ms;
+    width: 55vw;
+    visibility: visible;
+    font-size:medium;
+    padding: 8pt;
+}
+.right-check:checked ~ .left-toggle {
+    animation-name: toggle-hide;
+    animation-duration: 200ms;
+    width: 0vw;
+    visibility:hidden;
+    opacity:0;
+}

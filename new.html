@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Digital Game Distribution</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="./base.css">
+<link rel="stylesheet" href="./home.css">
+<link rel="stylesheet" href="./color-scheme.css">
+<body class="my-deep-purple">
+
+<div style="height:96px"></div>
+  <h1 class="w3-jumbo my-deep-purple w3-center sticky-heading">Recent Developments in Game Distribution</h1>
+<div style="height:64px"></div>
+
+
+<h2>Subscription model</h2>
+
+<p>When video rental was supplanted by video streaming in the late 2000s, game rental mostly went down with it.
+    However, unlike video, game rental was replaced with digital stores, allowing you to own digital copies of 
+    games and download them at any time to play them. It wasn't until recent services like Xbox Game Pass 
+    that subscription models similar to video streaming started to gain popularity.</p>
+
+<h2>Cloud Gaming</h2>
+
+<p>Cloud gaming is an alternative to digital download, where the game is instead run on a server, 
+    receiving control inputs and streaming the resulting video back to the player over the internet.</p>
+
+<h3>Advantage</h3>
+
+<p>There are two key advantages to this idea: the convenience of being able to play games without download, 
+    and the ability to play the latest big games without buying an expensive computer or console to be able to run them.</p>
+
+<h3>Problems</h3>
+
+<p>There are two sides to the problems with cloud gaming. The first is technical, as cloud gaming requires transmitting
+    a large amount of data with very low latency to be a good experience. The second is more socio-economic, to do 
+    with pricing schemes, the games available on the service, and how the customer gains access to them.</p>
+
+<h2>Google Stadia</h2>
+
+<p>Google Stadia is a very good case study for cloud gaming. On the one hand, the technology behind it is very sound.
+    The engineers at Google identified one of the key concerns with cloud gaming - added latency - and created a smart solution for it.
+    Because it's Google, they can leverage existing datacenters around the world to create very short travel time for 
+    packets, just a few ms, so the problem isn't the transmission of data, but the encoding and decoding. This is another 
+    area Google already excels in, as there have been years of development for codecs for YouTube to allow responsive
+    video playback and live-streaming with a delay of only a few seconds. However, latency for a video game should at least 
+    be under 100ms to be an acceptable experience, and ideally under 50ms for a good experience - and that's including 
+    10-70ms of latency introduced by the display itself. Another area they use for optimisation is in the transmission
+    protocols, where they've implemented their own version of Bottleneck Bandwith and Round-trip propagation time.
+    Another key optimisation is with buffering. With the incredibly low latency required for cloud gaming, the window 
+    within which a packet is still useful is incredibly short, making buffering not only unhelpful, but actively detrimental
+    as it can delay the arrival of actually useful packets. So, to disable buffering, Google uses WebRTC extensions 
+    on the receiver-side.</p>
+
+<p>However, despite their impressive technology, Google Stadia is widely considered a failure. The reasons behind this 
+    are fairly simple - Google tried to create Stadia as a service with its own digital storefront, entering a 
+    highly competitive and unfamiliar market. They spent tens of millions of dollars acquiring titles to put on their service,
+    but even then the selection of games available were considered unsatisfactory. On top of this, their pricing model 
+    has customers subscribe to the service, but then also purchase the games they want to play on Stadia's storefront, 
+    which goes against usual customer expectations of a subscription model (though a small selection of games 
+    were included with the subscription)</p>
+
+<!--In the last 10 years, the hottest new experiment in game distribution has been "cloud gaming", a similar idea to remote desktop,
+where your inputs are sent to a remote machine, and the results are sent back. In this case, rather than a whole computer,
+it's an instance of a game running on servers.
+
+There are many attractive benefits to this idea, the main being the ability to play a game without first downloading it
+or obtaining a physical copy, the former being a rather time-consuming task with the enormous scale of the latest releases.
+It also allows you to play a game on a much cheaper system, as it only has to process the resulting video from the server,
+instead of the intensive rendering of the game.
+
+There are also a lot of potential problems. First, this requires a lot of bandwidth, as streaming video usually does, but this
+is a non-issue for most customers, as evidenced by the ubiquity of services like Netflix, and even live-streaming services,
+such as for live sports events or services like Twitch. Second, a related problem, the latency is considerably more important
+for this than even for live-streaming services. It's common for a live-streaming service to have a delay of several seconds,
+but this is unacceptable for most video games. Going by the example of online multiplayer games, latency above 300ms
+is considered unusable for almost all games, and latency above 100ms is considered unusable for games requiring faster
+reaction times, such as first-person shooters. This latency is not equivalent to the acceptable latency for cloud gaming,
+however, as for online multiplayer games the player still sees the results of their actions rendered to their screen with
+very low latency (with the lowest reaching ~10ms, but averaging ~30ms, and 60-70ms on the high end), before their actions
+have been confirmed by the server or transmitted to other players. The result of high latency for these games is the server or
+host deciding that something different to what a player saw on their screen happened which can result in, for example,
+the player's avatar appearing to teleport around as their system tries to correct events to match what the server decides.
+
+So the big problem here is achieving lower latency than most online multiplayer games, while transmitting many orders of 
+magnitude more data, and even then the additional latency from cloud gaming may result in an unsatisfactory experience if 
+they already have high-latency hardware (usually due to their choice of TV)
+
+The other problem is how the cloud gaming platform offers the games. In the worst case, they would be presenting themselves
+as a competing platform and marketplace to existing consoles and stores, having to convince publishers to put games on their
+new, experimental service. This case is exactly what happened with Google Stadia, with Google spending tens of millions of 
+USD to put third party titles onto their service, and even then having a far too small library of games to compete in the
+market they placed themselves. On top of this, their purchase model was unappealing, requiring customers to pay a subscription
+fee just for access to the service. Once subscribed, customers would then have to buy any games they wanted to play on 
+Stadia's store. While this pricing model makes sense when compared to having to purchase an expensive gaming machine to be
+able to play the same games, it isn't what customers expect from a subscription model. Google have also added a higher 
+subscription tier, which provides the customer access to a limited selection of games for no extra fee, but these games 
+are typically older or lower-budget titles, not what Google was marketing Stadia to be the platform for.
+
+Unfortunately, due to the competitive nature of the industry, most technical details about the streaming technology of these 
+new services is confidential, so most discussion of these details will be speculation based on the information that is 
+available, such as performance metrics.-->
+
+
+</body>
+</html>

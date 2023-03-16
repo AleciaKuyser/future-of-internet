@@ -1,0 +1,79 @@
+.nav-button {
+    padding-top: 16px!important;
+    text-align: center!important;
+    height:100%;
+}
+
+.nav-home {
+    font-weight: bold;
+    font-size: larger;
+    justify-content: center;
+    text-align: center;
+    vertical-align: bottom;
+    padding-right: 24px!important
+}
+
+.nav-bar {
+    display: flex!important;
+    justify-content: center!important;
+    position:default!important;
+}
+
+.frame {
+    width: 100vw;
+    height: calc(100vh - 42pt);
+    border: none;
+    display: block!important;
+    margin: 0;
+    padding: 0;
+    position: absolute!important;
+}
+
+.frame-container {
+    line-height: 0!important;
+    position: fixed!important;
+}
+
+.menu {
+    display: none;
+    position: fixed;
+    top: 42pt;
+    left: 0;
+    z-index: 1;
+    width: 100vw;
+}
+
+.hover-menu .menu {
+    left: inherit;
+    width: inherit!important;
+}
+
+.menu-container:focus-within > div {
+    display: block!important;
+}
+
+.menu-container {
+    border:none;
+    margin:0;
+    padding:0;
+}
+
+.hover-menu:hover .menu {
+    display: block!important
+}
+
+/* make the navbar elements more responsive */
+@media (max-width:893px) and (min-width:701px){
+    .hover-menu .menu {
+        top: 61pt;
+    }
+}
+
+.inp-exp:checked + .menu {
+    display: block!important
+}
+
+.menu .menu {
+    position: static!important;
+    background-color: aqua!important;
+}

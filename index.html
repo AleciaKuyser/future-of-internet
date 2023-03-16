@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Digital Game Distribution</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="./base.css">
+<link rel="stylesheet" href="./nav.css">
+<link rel="stylesheet" href="./color-scheme.css">
+<body>
+
+<!-- Navbar -->
+<div class="">
+  <div class="nav-bar w3-bar w3-purple w3-card w3-center-align w3-large">
+    <div class="w3-bar-item w3-hide-large w3-hide-medium" style="width:60px!important"></div>
+    <div class="hover-menu">
+    <a href="./history.html" target="mainframe" class="nav-button w3-bar-item w3-button w3-hide-small w3-padding-large my-hover-lighter-purple">Old Experiments</a>
+    <div class="w3-bar-block w3-white w3-large menu">
+      <a href="./history.html" target="mainframe" class="nav-button w3-bar-item w3-button w3-padding-large my-hover-lighter-purple">History</a>
+      <a href="./state.html" target="mainframe" class="nav-button w3-bar-item w3-button w3-padding-large my-hover-lighter-purple">State of the Art</a>
+      <a href="./new.html" target="mainframe" class="nav-button w3-bar-item w3-button w3-padding-large my-hover-lighter-purple">Failures</a>
+      <a href="./future.html" target="mainframe" class="nav-button w3-bar-item w3-button w3-padding-large my-hover-lighter-purple">Future Outlook</a>
+    </div>
+    </div>
+    <a href="./state.html" target="mainframe" class="nav-button w3-bar-item w3-button w3-hide-small w3-padding-large my-hover-lighter-purple">State of the Art</a>
+    <a href="./home.html" target="mainframe" class="nav-home w3-bar-item w3-button w3-padding-large my-hover-light-purple my-lighter-purple my-text-deep-purple">Home</a>
+    <a href="./new.html" target="mainframe" class="nav-button w3-bar-item w3-button w3-hide-small w3-padding-large my-hover-lighter-purple">New Experiments</a>
+    <a href="./future.html" target="mainframe" class="nav-button w3-bar-item w3-button w3-hide-small w3-padding-large my-hover-lighter-purple">Future Outlook</a>
+    
+    <!-- Navbar on small screens -->
+    <div class="menu-container">
+    <a tabindex="0" class="nav-button w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large my-hover-lighter-purple w3-large w3-purple focus-menu" href="#" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <div class="w3-bar-block w3-white w3-hide-large w3-hide-medium w3-large menu">
+      <a href="./history.html" target="mainframe" class="nav-button w3-bar-item w3-button w3-padding-large my-hover-lighter-purple">History</a>
+      <label class="expand-button w3-bar-item w3-button w3-padding-large my-hover-lighter-purple" tabindex="1" for="hist-exp"> 
+      <input type="checkbox" id="hist-exp" class="inp-exp w3-right"/>
+      click me! 
+      <div class="w3-bar-block w3-white w3-large menu">
+        <a href="./history.html" target="mainframe" class="nav-button w3-bar-item w3-button w3-padding-large my-hover-lighter-purple">History</a>
+        <a href="./state.html" target="mainframe" class="nav-button w3-bar-item w3-button w3-padding-large my-hover-lighter-purple">State of the Art</a>
+        <a href="./failure.html" target="mainframe" class="nav-button w3-bar-item w3-button w3-padding-large my-hover-lighter-purple">Failures</a>
+        <a href="./future.html" target="mainframe" class="nav-button w3-bar-item w3-button w3-padding-large my-hover-lighter-purple">Future Outlook</a>
+      </div>
+      </label>
+      <a href="./state.html" target="mainframe" class="nav-button w3-bar-item w3-button w3-padding-large my-hover-lighter-purple">State of the Art</a>
+      <a href="./new.html" target="mainframe" class="nav-button w3-bar-item w3-button w3-padding-large my-hover-lighter-purple">Failures</a>
+      <a href="./future.html" target="mainframe" class="nav-button w3-bar-item w3-button w3-padding-large my-hover-lighter-purple">Future Outlook</a>
+    </div>
+    </div>
+  </div>
+</div>
+
+<!--container div to remove the whitespace-->
+<div class="frame-container">
+<!--the main body of the page, gets swapped out by click navbar buttons/-->
+  <iframe id="frame" name="mainframe" class="frame" src="./home.html"></iframe>
+</div>
+
+</body>
+</html>
